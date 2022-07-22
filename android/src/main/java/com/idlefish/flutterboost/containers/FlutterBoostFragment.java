@@ -314,7 +314,8 @@ public class FlutterBoostFragment extends FlutterFragment implements FlutterView
     private void performAttach() {
         if (!isAttached) {
             // Attach plugins to the activity.
-            getFlutterEngine().getActivityControlSurface().attachToActivity(getActivity(), getLifecycle());
+            // getFlutterEngine().getActivityControlSurface().attachToActivity(getActivity(), getLifecycle());
+            getFlutterEngine().getActivityControlSurface().attachToActivity(fakeAppComponent, getLifecycle());
 
             if (platformPlugin == null) {
                 platformPlugin = new PlatformPlugin(getActivity(), getFlutterEngine().getPlatformChannel());
